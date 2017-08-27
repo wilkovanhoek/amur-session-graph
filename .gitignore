@@ -1,0 +1,32 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# java
+bin/
+
+# R stuff
+.RData
+.Rhistory
+r-stuff/*.pdf
+*.png
+*.pdf
+
+# results
+data/**/results/
+
+# config
+/config/settings.conf

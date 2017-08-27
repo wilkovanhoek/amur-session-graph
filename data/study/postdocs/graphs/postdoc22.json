@@ -1,0 +1,156 @@
+{
+  "type": "p22",
+  "weight": 1,
+  "children": [
+    {
+      "type": "key",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "key",
+          "weight": 1,
+          "children": [
+            {
+              "type": "key",
+              "weight": 1,
+              "children": [
+                {
+                  "type": "key",
+                  "weight": 1,
+                  "children": [
+                    {
+                      "type": "key",
+                      "weight": 1,
+                      "children": [
+                        {
+                          "type": "key",
+                          "weight": 1,
+                          "children": [
+                            {
+                              "type": "key",
+                              "weight": 1,
+                              "children": [
+                                {
+                                  "type": "key",
+                                  "weight": 1,
+                                  "children": [
+                                    {
+                                      "type": "doc",
+                                      "weight": 1
+                                    },
+                                    {
+                                      "type": "doc",
+                                      "weight": 1
+                                    },
+                                    {
+                                      "type": "doc",
+                                      "weight": 1
+                                    },
+                                    {
+                                      "type": "key",
+                                      "weight": 1,
+                                      "children": [
+                                        {
+                                          "type": "doc",
+                                          "weight": 1
+                                        },
+                                        {
+                                          "type": "doc",
+                                          "weight": 1
+                                        },
+                                        {
+                                          "type": "key",
+                                          "weight": 1,
+                                          "children": [
+                                            {
+                                              "type": "key",
+                                              "weight": 1,
+                                              "children": [
+                                                {
+                                                  "type": "doc",
+                                                  "weight": 1
+                                                },
+                                                {
+                                                  "type": "key",
+                                                  "weight": 1,
+                                                  "children": [
+                                                    {
+                                                      "type": "doc",
+                                                      "weight": 1
+                                                    },
+                                                    {
+                                                      "type": "doc",
+                                                      "weight": 1
+                                                    },
+                                                    {
+                                                      "type": "doc",
+                                                      "weight": 1
+                                                    },
+                                                    {
+                                                      "type": "doc",
+                                                      "weight": 1
+                                                    },
+                                                    {
+                                                      "type": "doc",
+                                                      "weight": 1
+                                                    },
+                                                    {
+                                                      "type": "doc",
+                                                      "weight": 1
+                                                    },
+                                                    {
+                                                      "type": "author",
+                                                      "weight": 1,
+                                                      "children": [
+                                                        {
+                                                          "type": "doc",
+                                                          "weight": 1
+                                                        },
+                                                        {
+                                                          "type": "doc",
+                                                          "weight": 1
+                                                        },
+                                                        {
+                                                          "type": "doc",
+                                                          "weight": 1
+                                                        },
+                                                        {
+                                                          "type": "doc",
+                                                          "weight": 1
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

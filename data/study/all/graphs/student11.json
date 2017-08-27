@@ -1,0 +1,94 @@
+{
+  "type": "s11",
+  "weight": 1,
+  "children": [
+    {
+      "type": "key",
+      "weight": 1,
+      "children": [
+        {
+          "type": "key",
+          "weight": 1,
+          "children": [
+            {
+              "type": "fst",
+              "weight": 1,
+              "children": [
+                {
+                  "type": "key",
+                  "weight": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cite",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1,
+          "children": [
+            {
+              "type": "cite",
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "fst",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "fst",
+          "weight": 1,
+          "children": [
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1,
+              "children": [
+                {
+                  "type": "cite",
+                  "weight": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

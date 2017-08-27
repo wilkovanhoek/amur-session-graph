@@ -1,0 +1,98 @@
+{
+  "type": "p26",
+  "weight": 1,
+  "children": [
+    {
+      "type": "author",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "author",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "weight": 1
+    },
+    {
+      "type": "key",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1,
+          "children": [
+            {
+              "type": "author",
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

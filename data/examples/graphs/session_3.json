@@ -1,0 +1,39 @@
+{
+  "type": "3",
+  "weight": 1,
+  "children": [
+    {
+      "type": "search",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc1",
+          "weight": 1,
+          "children": []
+        },
+        {
+          "type": "doc2",
+          "weight": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "citation",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc3",
+          "weight": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "journal",
+      "weight": 1,
+      "children": [
+      ]
+    }
+  ]
+}
