@@ -1,0 +1,11 @@
+{
+  "type": "1",
+  "weight": 1,
+  "children": [
+    {
+      "type": "1_1",
+      "weight": 1,
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "type": "s15",
+  "weight": 1,
+  "children": [
+    {
+      "type": "fst",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "fst",
+          "weight": 1,
+          "children": [
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "fst",
+              "weight": 1,
+              "children": [
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "fst",
+                  "weight": 1,
+                  "children": [
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "author",
+                      "weight": 1,
+                      "children": [
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

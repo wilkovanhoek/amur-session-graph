@@ -1,0 +1,28 @@
+{
+  "type": "2",
+  "weight": 1,
+  "children": [
+    {
+      "type": "author",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc1",
+          "weight": 1,
+          "children": []
+        },
+        {
+          "type": "doc2",
+          "weight": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "type": "journal",
+      "weight": 1,
+      "children": [
+      ]
+    }
+  ]
+}

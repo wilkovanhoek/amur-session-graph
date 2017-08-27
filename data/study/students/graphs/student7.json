@@ -1,0 +1,170 @@
+{
+  "type": "s7",
+  "weight": 1,
+  "children": [
+    {
+      "type": "key",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "class",
+          "weight": 1,
+          "children": [
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "weight": 1
+            },
+            {
+              "type": "fst",
+              "weight": 1,
+              "children": [
+                {
+                  "type": "key",
+                  "weight": 1,
+                  "children": [
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    },
+                    {
+                      "type": "doc",
+                      "weight": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "rec",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "cite",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1,
+          "children": [
+            {
+              "type": "author",
+              "weight": 1,
+              "children": [
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

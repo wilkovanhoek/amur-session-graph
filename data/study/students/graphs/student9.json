@@ -1,0 +1,103 @@
+{
+  "type": "s9",
+  "weight": 1,
+  "index": 1,
+  "children": [
+    {
+      "type": "cite",
+      "weight": 1,
+      "index": 2,
+      "children": [
+        {
+          "type": "doc",
+          "index": 3,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 4,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "ref",
+      "weight": 1,
+      "index": 5,
+      "children": [
+        {
+          "type": "doc",
+          "index": 6,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 7,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 8,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 9,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 15,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 10,
+          "weight": 1,
+          "children": [
+            {
+              "type": "cite",
+              "weight": 1,
+              "index": 11,
+              "children": [
+                {
+                  "type": "doc",
+                  "index": 12,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 13,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 14,
+                  "weight": 1,
+                  "children": [
+                    {
+                      "type": "ref",
+                      "index": 16,
+                      "weight": 1,
+                      "children": [
+                        {
+                          "type": "doc",
+                          "index": 17,
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "fst",
+      "weight": 1
+    }
+  ]
+}

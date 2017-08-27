@@ -1,0 +1,217 @@
+{
+  "type": "s4",
+  "weight": 1,
+  "index": 1,
+  "children": [
+    {
+      "type": "ref",
+      "weight": 1,
+      "index": 2,
+      "children": [
+        {
+          "type": "doc",
+          "index": 3,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 4,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 5,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 6,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 7,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 8,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 9,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 10,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 11,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "rec",
+      "index": 12,
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "index": 13,
+          "weight": 1,
+          "children": [
+            {
+              "type": "rec",
+              "index": 14,
+              "weight": 1,
+              "children": [
+                {
+                  "type": "doc",
+                  "index": 15,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 16,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 17,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 18,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 19,
+                  "weight": 1
+                }
+              ]
+            },
+            {
+              "type": "fst",
+              "weight": 1,
+              "index": 20,
+              "children": [
+                {
+                  "type": "fst",
+                  "weight": 1,
+                  "index": 21,
+                  "children": [
+                    {
+                      "type": "fst",
+                      "index": 22,
+                      "weight": 1,
+                      "children": [
+                        {
+                          "type": "doc",
+                          "index": 23,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 24,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 25,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 26,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 27,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 28,
+                          "weight": 1
+                        },
+                        {
+                          "type": "fst",
+                          "index": 29,
+                          "weight": 1,
+                          "children": [
+                            {
+                              "type": "doc",
+                              "index": 30,
+                              "weight": 1
+                            },
+                            {
+                              "type": "fst",
+                              "index": 31,
+                              "weight": 1,
+                              "children": [
+                                {
+                                  "type": "doc",
+                                  "index": 32,
+                                  "weight": 1
+                                },
+                                {
+                                  "type": "doc",
+                                  "index": 33,
+                                  "weight": 1
+                                },
+                                {
+                                  "type": "doc",
+                                  "index": 34,
+                                  "weight": 1
+                                },
+                                {
+                                  "type": "fst",
+                                  "index": 35,
+                                  "weight": 1,
+                                  "children": [
+                                    {
+                                      "type": "doc",
+                                      "index": 36,
+                                      "weight": 1
+                                    },
+                                    {
+                                      "type": "doc",
+                                      "index": 37,
+                                      "weight": 1
+                                    },
+                                    {
+                                      "type": "doc",
+                                      "index": 38,
+                                      "weight": 1
+                                    },
+                                    {
+                                      "type": "doc",
+                                      "index": 39,
+                                      "weight": 1
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

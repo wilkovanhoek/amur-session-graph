@@ -1,0 +1,22 @@
+{
+  "type": "4",
+  "weight": 1,
+  "children": [
+    {
+      "type": "4_1",
+      "weight": 1,
+      "children": []
+    },
+    {
+      "type": "4_2",
+      "weight": 1,
+      "children": [
+        {
+          "type": "4_2_1",
+          "weight": 1,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

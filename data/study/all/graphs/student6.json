@@ -1,0 +1,80 @@
+{
+  "type": "s6",
+  "weight": 1,
+  "index": 1,
+  "children": [
+    {
+      "type": "key",
+      "index": 2,
+      "weight": 1,
+      "children": [
+        {
+          "type": "key",
+          "index": 8,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "rec",
+      "index": 3,
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "index": 4,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 5,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 6,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 7,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "ref",
+      "index": 9,
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "index": 10,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 11,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 12,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "cite",
+      "index": 13,
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "index": 14,
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "type": "s14",
+  "weight": 1,
+  "children": [
+    {
+      "type": "ref",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "rec",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "cite",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1,
+          "children": [
+            {
+              "type": "ref",
+              "weight": 1
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "weight": 1,
+          "children": [
+            {
+              "type": "ref",
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
