@@ -1,4 +1,4 @@
-User Session Tree Analysis Tool used in the DFG Project AMUR (TPDL 2017)
+User Session Tree Analysis Tool used in the DFG Project AMUR
 ==============
 
 This tool can be used to analyse user behaviour based on a tree based represenation of the user's search session in a search system. There are three modes in which the tool can be used:
