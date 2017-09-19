@@ -1,4 +1,4 @@
-User Session Tree Analysis Tool used in the DFG Project AMUR (IJDL 2017)
+User Session Tree Analysis Tool used in the DFG Project AMUR (TPDL 2017)
 ==============
 
 This tool can be used to analyse user behaviour based on a tree based represenation of the user's search session in a search system. There are three modes in which the tool can be used:
@@ -8,14 +8,35 @@ This tool can be used to analyse user behaviour based on a tree based represenat
 * cluster: clusters all graphs into n groups with at least m members. This mode is in experimental status and was never finished.
 
 
-Create graphs used in IJDL 2017 Paper (Investigating exploratory search activities based on the stratagemlevel in digital libraries)
+Create graphs used in TPDL 2017 Paper (Building User Groups based on a Structural Representation of User Search Sessions)
 --------------
 
-You can create the graphs used in our paper following two steps described below. You would need Java, Maven and R installed on your system. Also we recommend using IDEs (Eclipse, R-Studio).
+You can create the graphs used in our paper following the steps described below. You would need Java, Maven and R installed on your system. Also we recommend using IDEs (Eclipse, R-Studio).
 
- 1. run the java project. The main is in org.gesis.wts.amur.graph.Start. There are no arguments needed. We recommend to do this in an IDE (e.g. Eclipse). It will generate combined graphs (json and csv files) for the sessions stored in the *data/study/[all|students|postdocs]/graphs* folders and stores the results in *data/study/[all|students|postdocs]/results*.
+ 1. run the java project. The main is in org.gesis.wts.amur.graph.Start. Pass 'tpdl-settings.conf' as only argument (alternatively, you can omit an argument but would have to rename the *config/tpdl-settings.conf* to *config/settings.conf*). We recommend to do this in an IDE (e.g. Eclipse). The project will process various folders and create results in: 
+ 
+ * *data/study/all/results*
+ combined graph for all graphs and the individual graphs
+ 
+ * *data/study/grouping/non_archetype_graphs*
+ combined graph of all graphs that were not grouped and the individual graphs
+ 
+ * *data/study/grouping/groups/[ecobreadth|exhbreadth|exhepth|syssupport]/results*
+ combined graph per group and the individual graphs
+ 
+ The creation of the individual graphs is supposed to help to generate the ability to inspect each session individually.
+ 
+ 2. copy the combined graphs into the archetypes folder for further processing (executed from the projects root folder):
+ 
+ ```
+cp data/study/all/results/study_* data/study/grouping/archetypes/
+cp data/study/grouping/groups/ecobreadth/results/study_* data/study/grouping/archetypes/
+cp data/study/grouping/groups/exhbreadth/results/study_* data/study/grouping/archetypes/
+cp data/study/grouping/groups/exhdepth/results/study_* data/study/grouping/archetypes/
+cp data/study/grouping/groups/syssupport/results/study_* data/study/grouping/archetypes/
+ ```
 
- 2. run the R script *r-stuff/displayGraphs.R* (No arguments needed). This will create pdf files for the graph results from step one and stores them in the same folders (*data/study/[all|students|postdocs]/results*).
+ 3. run the R script *r-stuff/displayGraphs.R* (No arguments needed). This will create pdf files for all individual graphs in the folder described in (1) (and stores them in the same folders *data/study/grouping/groups/[ecobreadth|exhbreadth|exhepth|syssupport]/results*) and the combined and thresholded graphs in *data/study/grouping/archetypes/*.
 
 If this process does not work for you or you have any additional questions, please don't hesitate to start an issue or contact the corresponding authors of the paper.
 

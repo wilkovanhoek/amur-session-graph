@@ -27,16 +27,12 @@ plotGraph <- function(g, fileName, vertexSize, labelCex, weightFactor, threshold
        edge.label.cex=labelCex,
        edge.label.color="black",
        #edge.color="black",
-       
-       margin=-0.00,
-       # special margin and asp for threshold graph 12 of phds 
-       # uncomment the following two lines and comment the line above (margin)
-       # margin = c(1.5, 0,0.0,0),
-       # asp= 0.6 
-       
        vertex.color="white",
-       vertex.size=vertexSize
-       )
+       vertex.size=vertexSize,
+       #margin=-0.00,
+       # special margin for threshold graph 12 of phds
+       #margin = c(2, 0,0.0,0),
+       asp= 0.6)
   
   #plot
   if(showLegend){
@@ -53,8 +49,9 @@ plotGraph <- function(g, fileName, vertexSize, labelCex, weightFactor, threshold
   }
 }
 
-plotCSVFiles <- function(folder, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex, thresholds){
+plotCSVFiles <- function(folder, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex, thresholds, plotBarCharts){
   files <- list.files(path=folder, pattern="*.csv", full.names=T, recursive=FALSE)
+  print(files)
   lapply(files, function(curFile) {
     fileName = substr(curFile, 1, nchar(curFile)-4)
     print(curFile)
@@ -62,15 +59,19 @@ plotCSVFiles <- function(folder, vertexSize, labelCex, weightFactor, threshold, 
     g=graph.data.frame(el)
     if(is.null(thresholds)){
       plotGraph(g, fileName,  vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex)
-      createBarChart(el, fileName, toFile)  
+      if(plotBarCharts){
+        createBarChart(el, fileName, toFile)    
+      }
     }else{
-      for(i in thresholds){
-        #print(el)
-        thresholdList <- subset(el, weight >= i) 
-        g <- graph.data.frame(thresholdList)
-        newFile <- paste(fileName,"_threshold_",i,sep="")
-        plotGraph(g, newFile, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex)
-        
+      if(!is.null(thresholds)){
+        for(i in thresholds){
+          #print(el)
+          thresholdList <- subset(el, weight >= i) 
+          g <- graph.data.frame(thresholdList)
+          newFile <- paste(fileName,"_threshold_",i,sep="")
+          plotGraph(g, newFile, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex)
+          
+        }  
       }
     }
   })
@@ -83,7 +84,7 @@ createBarChart <- function(el, fileName, toFile) {
   n <- length(el)
   # get the second highest weight to create an upper bound for thresholding
   max <- max(el$weight)
-  #curFile(paste("max:",max))
+  print(paste("max:",max))
   min=1
   threshChart <- matrix( nrow = max-min+1, ncol = 2)
   colnames(threshChart) <- c("threshold","n")
@@ -94,7 +95,7 @@ createBarChart <- function(el, fileName, toFile) {
     threshChart[pos,2]<- nrow(threshold)
   }
   if(toFile){
-    pdf(paste(fileName,"_dist.pdf",sep=""),width = width, height = height/1.5)
+    pdf(paste(fileName,"_dist.pdf",sep=""),width = width, height = height/2)
   }
   par(mar=c(4.8, 5.5,1.5,0.0))
   barplot(threshChart[,2], 
@@ -111,42 +112,55 @@ createBarChart <- function(el, fileName, toFile) {
   }
 }
 
-
-
-weight="../data/subtreeweight_test/results"
-examples_graphs="../data/examples/results"
-#examples_merged="../data/examples/results/merged"
-
-#study="../data/study/results"
+### folders 
+subtreeweight_test="../data/subtreeweight_test/results"
+study="../data/study/results"
 study_all="../data/study/all/results"
-study_students="../data/study/students/results"
-study_phds="../data/study/postdocs/results"
+study_students="../data/study/results/students"
+study_phds="../data/study/results/phds"
+examples_graphs="../data/examples/results/graphs"
+examples_merged="../data/examples/results/merged"
 
-# currently only using square layouts
-size = 60
-# plotCSVFiles <- function(folder, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend)
+### grouping related folders
+study_non_archetype_graphs="../data/study/grouping/non_archetype_graphs/results"
+study_syssupport="../data/study/grouping/groups/syssupport/results"
+study_exhbreadth="../data/study/grouping/groups/exhbreadth/results"
+study_exhdepth="../data/study/grouping/groups/exhdepth/results"
+study_ecobreadth="../data/study/grouping/groups/ecobreadth/results"
+study_archetypes="../data/study/grouping/archetypes"
+
+### defining plot variables 
+# plotCSVFiles <- function(folder, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex, thresholds, plotBarCharts )
+
+vertexSize = 5
+labelCex = 6
+weightFactor =  6
+threshold = 50
+width = 60
+height = width/1.5
+legendCexOne = 10
+legendCexTwo = 20
+legendCexThree = 24
 
 
-legendCexOne = 12
-legendCexTwo = 24
-legendCexThree = 28
+# plotCSVFiles <- function(folder, vertexSize, labelCex, weightFactor, threshold, width, height, toFile, showLegend, legendCex, thresholds, plotBarCharts )
 
-# plot examples
-plotCSVFiles(examples_graphs, 10, 6, 100, 50, size, size, TRUE, FALSE, legendCexTwo, NULL)
-#plotCSVFiles(examples_merged, 10, 40, 70, 0, size, size, TRUE, FALSE, legendCexThree, NULL)
+### plotting all session graphs, so they can be compared on a visual basis
+plotCSVFiles(study_all, vertexSize, labelCex, weightFactor, threshold, width, height, TRUE, TRUE, legendCexOne+6, NULL, FALSE)
+plotCSVFiles(study_non_archetype_graphs, vertexSize, labelCex, weightFactor, threshold, width, height, TRUE, TRUE, legendCexOne+6, NULL, FALSE)
 
-#plotCSVFiles(study, 2.3, 6, 1.5, 50, size, size, TRUE, TRUE, legendCexOne, NULL)
-# plots for complete dataset
-plotCSVFiles(study_all, 2.3, 6, 1.5, 50, size, size, TRUE, TRUE, legendCexOne, NULL)
-plotCSVFiles(study_all, 10.5, 6, 5, 50, size, size, TRUE, TRUE, legendCexThree, c(6,11,17))
+### plots for study group systm support
+plotCSVFiles(study_syssupport, vertexSize, labelCex, weightFactor, threshold, width, height, TRUE, TRUE, legendCexTwo, NULL, FALSE)
 
-# plots for students
-plotCSVFiles(study_students, 2.3, 6, 3, 50, size, size, TRUE, TRUE, legendCexTwo, NULL)
-plotCSVFiles(study_students, 10.5, 6, 8, 50, size, size, TRUE, TRUE, legendCexThree, c(5,9,12))
+### plots for study goup exhaustive breadth
+plotCSVFiles(study_exhbreadth, vertexSize, labelCex, weightFactor, threshold, width, height, TRUE, TRUE, legendCexTwo, NULL, FALSE)
 
-# plots for postdocs
-plotCSVFiles(study_phds, 2.3, 6, 3, 50, size, size, TRUE, TRUE, legendCexTwo,NULL)
-plotCSVFiles(study_phds, 10.5, 6, 8, 50, size, size, TRUE, TRUE, legendCexThree, c(5,9,12))
-# In the threshold graph (12) for phds, the graph is drawn into the legend, 
-# as a fix, there is a seperate command and in the plotGraph function an commented margin line
-#plotCSVFiles(study_phds, 10.5, 6, 8, 50, size, size, TRUE, TRUE, legendCexThree, c(12))
+### plots for study group exhaustive depth
+plotCSVFiles(study_exhdepth, vertexSize, labelCex, weightFactor, threshold, width, height, TRUE, TRUE, legendCexTwo, NULL, FALSE)
+
+### plots for study group economic breadth
+plotCSVFiles(study_ecobreadth, vertexSize, labelCex, weightFactor, threshold, width, height, TRUE, TRUE, legendCexTwo, NULL, FALSE)
+
+### plotting archetypes and thresholds
+plotCSVFiles(study_archetypes, 2.3, labelCex, 3, threshold, width, height, TRUE, TRUE, legendCexTwo, NULL, TRUE)
+plotCSVFiles(study_archetypes, 2.3, labelCex, 3, threshold, width, height, TRUE, TRUE, legendCexTwo, c(2,3,4), FALSE)

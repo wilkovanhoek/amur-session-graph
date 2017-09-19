@@ -9,20 +9,40 @@ public class Start {
 	public static void main(String[] args) {
 		GraphAnalyser graphAnalyser = new GraphAnalyser();
 		GraphClusterer graphClusterer = new GraphClusterer();
+		GraphClassifier graphClassifier = new GraphClassifier();
 
-		for (String curData : Config.getInstance().getParse()) {
-			System.out.println("processing " + curData + " data in folder " + Config.getInstance().getDataFolders().get(curData) + Config.LINEDELIMITER);
-			log.info("processing " + curData + " data in folder " + Config.getInstance().getDataFolders().get(curData) + Config.LINEDELIMITER);
-
-			if (Config.getInstance().getBooleanParameter("clustering")) {
-				// TODO: move grouping number to config file
-				graphClusterer.startClustering(Config.getInstance().getDataFolders().get(curData), (byte) 2);
-			} else {
-				graphAnalyser.startAnalysis(Config.getInstance().getDataFolders().get(curData));
-			}
-
-			log.info("processing is done!" + Config.LINEDELIMITER);
-			System.out.println("processing is done! - You can find more detailed information in log/session-graph.log" + Config.LINEDELIMITER);
+		System.out.println("Started session graph project (see log file for details)...\n");
+		String configPath = "";
+		if (args != null && args.length > 0) {
+			configPath = args[0];
 		}
+		System.out.println(Config.getInstance(configPath).getMode());
+		switch (Config.getInstance(configPath).getMode()) {
+		case CLASSIFY:
+			for (String curData : Config.getInstance().getClassify()) {
+				graphClassifier.startClassifying(Config.getInstance().getClassificationFolders().get(curData));
+			}
+			break;
+		default:
+			for (String curData : Config.getInstance().getParse()) {
+				log.info("processing " + curData + " data in folder "
+						+ Config.getInstance().getDataFolders().get(curData) + Config.LINEDELIMITER);
+
+				switch (Config.getInstance().getMode()) {
+				case CLUSTER:
+					graphClusterer.startClustering(Config.getInstance().getDataFolders().get(curData), (byte) 2);
+					break;
+
+				default:
+					graphAnalyser.startAnalysis(Config.getInstance().getDataFolders().get(curData), curData);
+					break;
+				}
+
+			}
+			break;
+		}
+
+		log.info("processing is done!" + Config.LINEDELIMITER);
+		System.out.println("... processing is done!");
 	}
 }
