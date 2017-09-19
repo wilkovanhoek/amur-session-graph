@@ -66,7 +66,7 @@ public class TheTool {
 	}
 
 	public static List<Map<Integer, List<Integer>>> grouping(List<Integer> graphs, List<Integer> groups) {
-		log.info("starting recursive grouping for groups (" + groups.toString() + ") and graphs (" + graphs.toString() + ")");		
+		log.info("starting recursive grouping for groups (" + groups.toString() + ") and graphs (" + graphs.toString() + ")");
 		if (graphs.isEmpty()) {
 			// Map<Integer, List<Integer>> empty = Collections.emptyMap();
 			// return Collections.singletonList(empty);
@@ -118,7 +118,7 @@ public class TheTool {
 
 		for (Byte curGraph : graphs) {
 			log.debug("curGraph: " + curGraph + " - resultList size: " + resultList.size());
-			
+
 			List<Map<Byte, List<Byte>>> newElements = new ArrayList<>();
 			// if there are already results in the list
 			if (!resultList.isEmpty()) {
@@ -147,7 +147,7 @@ public class TheTool {
 
 								// add newMap to resultList
 								newElements.add(newMap);
-								newMap=null;
+								newMap = null;
 							} else {
 								if (!curMap.containsKey(curGroup)) {
 									List<Byte> newList = new ArrayList<>();
@@ -227,4 +227,37 @@ public class TheTool {
 			break;
 		}
 	}
+
+	public static Node thresholdGraph(Node graph, int threshold) {
+		return thresholdGraph(graph, threshold, false);
+	}
+
+	public static Node thresholdGraph(Node node, int threshold, boolean resetWeight) {
+		if (node.getWeight() >= threshold) {
+			Node newNode = new Node(node.getType(), node.getWeight());
+			if (resetWeight)
+				newNode.setWeight(1);
+
+			for (Node curChild : node.getChildlessChildren()) {
+				if (curChild.getWeight() >= threshold) {
+					Node newChild = new Node(curChild.getType(), curChild.getWeight());
+					if (resetWeight)
+						newChild.setWeight(1);
+					newNode.getChildren().add(newChild);
+				}
+
+			}
+			for (Node curChild : node.getChildrenWithKids()) {
+				if (curChild.getWeight() >= threshold) {
+					Node newChild = thresholdGraph(curChild, threshold, resetWeight);
+					if (newChild != null)
+						newNode.getChildren().add(newChild);
+				}
+			}
+			return newNode;
+		} else
+			return null;
+
+	}
+
 }

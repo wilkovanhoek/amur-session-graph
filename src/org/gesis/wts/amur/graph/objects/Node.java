@@ -2,8 +2,6 @@ package org.gesis.wts.amur.graph.objects;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 import org.gesis.wts.amur.graph.tools.TheTool;
 
@@ -13,7 +11,6 @@ public class Node implements Comparable<Node> {
 	int weight;
 	private double subtreeWeight;
 	private int numberOfNodes;
-	int index;
 	private List<Node> children;
 	// TODO: find more stupid naming for the two lists
 	private List<Node> childrenWithKids;
@@ -24,12 +21,13 @@ public class Node implements Comparable<Node> {
 		this.childrenWithKids = new ArrayList<Node>();
 		this.childlessChildren = new ArrayList<Node>();
 		this.weight = 1;
-		this.index=-1;
 		this.type = "init";
 	}
 
 	public Node(String type, int weight) {
 		this.children = new ArrayList<Node>();
+		this.childrenWithKids = new ArrayList<Node>();
+		this.childlessChildren = new ArrayList<Node>();
 		this.weight = weight;
 		this.type = type;
 	}
@@ -43,7 +41,6 @@ public class Node implements Comparable<Node> {
 		this.childrenWithKids = new ArrayList<Node>(copyNode.getChildrenWithKids());
 		this.childlessChildren = new ArrayList<Node>(copyNode.getChildlessChildren());
 		this.weight = copyNode.getWeight();
-		this.index = copyNode.getIndex();
 		this.type = copyNode.getType();
 		this.subtreeWeight = copyNode.subtreeWeight;
 		this.numberOfNodes = copyNode.numberOfNodes;
@@ -55,7 +52,6 @@ public class Node implements Comparable<Node> {
 			this.childrenWithKids = Node.getCopies(copyNode.getChildrenWithKids());
 			this.childlessChildren = Node.getCopies(copyNode.getChildlessChildren());
 			this.weight = copyNode.getWeight();
-			this.index = copyNode.getIndex();
 			this.type = copyNode.getType();
 			this.subtreeWeight = copyNode.subtreeWeight;
 			this.numberOfNodes = copyNode.numberOfNodes;
@@ -86,14 +82,6 @@ public class Node implements Comparable<Node> {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
-	}
-	
-	public int getIndex() {
-		return weight;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
 	}
 
 	public List<Node> getChildren() {
@@ -159,6 +147,10 @@ public class Node implements Comparable<Node> {
 
 	public boolean addChildlessChildren(List<Node> newChildlessChildren) {
 		return this.childlessChildren.addAll(newChildlessChildren);
+	}
+	
+	public boolean addChildlessChild(Node newChildlessChildren) {
+		return this.childlessChildren.add(newChildlessChildren);
 	}
 
 	@Override
@@ -239,18 +231,6 @@ public class Node implements Comparable<Node> {
 		return this.numberOfNodes;
 	}
 
-	public SortedMap<Integer, String> getSequenceMap(){
-		SortedMap<Integer, String> resultMap = new TreeMap<>();
-		resultMap.put(this.index,this.type);
-		for(Node curChild: childrenWithKids){
-			SortedMap<Integer, String> childSequence = curChild.getSequenceMap();
-			resultMap.putAll(childSequence);
-		}
-		for(Node curChild: childlessChildren){
-			SortedMap<Integer, String> childSequence = curChild.getSequenceMap();
-			resultMap.putAll(childSequence);
-		}		
-		return resultMap;		
-	}
+	
 
 }

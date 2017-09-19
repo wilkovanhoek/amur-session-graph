@@ -39,7 +39,20 @@ public class GraphJSONParser {
 		if (!resultsFolder.exists())
 			resultsFolder.mkdirs();
 		try {
-			File[] jsonFiles = getJSONFiles(dataFolder + "/graphs");
+			graphList = getGraphs(dataFolder + "/graphs");
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.error(e.getMessage(), e);
+		}
+		log.info("reading of graphs is done!");
+		return graphList;
+	}
+	
+	public static List<Node> getGraphs(String folder){
+		List<Node> graphList = new ArrayList<Node>();
+		
+		try {
+			File[] jsonFiles = getJSONFiles(folder);
 			for (int i = 0; i < jsonFiles.length; i++) {
 				log.debug("reading file: " + jsonFiles[i].getName());
 				BufferedReader br = new BufferedReader(new FileReader(jsonFiles[i]));
@@ -56,10 +69,7 @@ public class GraphJSONParser {
 			e.printStackTrace();
 			log.error(e.getMessage(), e);
 		}
-		if (Config.getInstance().getBooleanParameter("writeSequences")){
-			Graph2CSVWriter.generateSequenceCSV(graphList, "sequence");
-		}
-		log.info("reading of graphs is done!");
+		
 		return graphList;
 	}
 

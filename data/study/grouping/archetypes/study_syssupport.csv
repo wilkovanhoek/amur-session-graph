@@ -1,0 +1,17 @@
+from,to,weight
+0._p18-p27-s6-s14,1._ref-ref-rec-cite,4
+1._ref-ref-rec-cite,2._doc-doc-doc-doc,4
+2._doc-doc-doc-doc,3._ref,1
+1._ref-ref-rec-cite,5._doc-doc-doc-doc,4
+5._doc-doc-doc-doc,6._ref,1
+1._ref-ref-rec-cite,8._doc-doc-doc-doc,4
+1._ref-ref-rec-cite,9._doc-doc,2
+0._p18-p27-s6-s14,9._cite-rec-ref-rec,4
+9._cite-rec-ref-rec,10._doc-doc-doc-doc,4
+9._cite-rec-ref-rec,11._doc-doc-doc-doc,4
+9._cite-rec-ref-rec,12._doc-doc,2
+0._p18-p27-s6-s14,14._key-cite-key-ref,4
+14._key-cite-key-ref,15._key-doc-key-doc,4
+14._key-cite-key-ref,16._doc,1
+0._p18-p27-s6-s14,18._cite-key,2
+18._cite-key,19._doc,1

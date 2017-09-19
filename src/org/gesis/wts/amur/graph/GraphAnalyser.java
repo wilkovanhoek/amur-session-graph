@@ -22,41 +22,78 @@ public class GraphAnalyser {
 
 	public GraphAnalyser() {
 	}
+	
+	public GraphAnalyser(String dataFolder) {
+		GraphAnalyser.dataFolder = dataFolder;
+	}
 
-	public void startAnalysis(String dataFolder) {
+	public void startAnalysis(String dataFolder, String name) {
 		GraphAnalyser.dataFolder = dataFolder;
 		GraphJSONParser.init(dataFolder);
 
 		List<Node> graphList = GraphJSONParser.getGraphs();
-		Node resultGraph = new Node();
+		
 
 		log.info("merging graphs");
 		long startTime = System.currentTimeMillis();
 		log.info("timestamp startet: " + DateFormat.getTimeInstance().format(startTime));
-		// mergeGraphs(graphList);
-		if (Config.getInstance().getBooleanParameter("permutations")) {
-			if (Config.getInstance().getBooleanParameter("threaded")) {
-				mergeAllGraphPermutationsThreaded(graphList);
-			} else {
-				resultGraph = mergeAllGraphPermutations(graphList);
-			}
-		} else {
-			if (Config.getInstance().getBooleanParameter("sorted")) {
-				resultGraph = mergeGraphsSorted(graphList);
-			} else {
-				resultGraph = mergeGraphsEfficient(graphList);
-			}
 
+		Node resultGraph = mergeGraphs(graphList);
+		if(Config.getInstance().getBooleanParameter("saveArchetypeSeparately")) {
+			GraphJSONParser.serialiseGraph(resultGraph, name, true);
+		}else {
+			GraphJSONParser.serialiseGraph(resultGraph, true);
 		}
-		GraphJSONParser.serialiseGraph(resultGraph, true);
-		long endTime = System.currentTimeMillis();
+		
 		long elapsed = System.currentTimeMillis() - startTime;
-		log.info("timestamp finished: " + DateFormat.getTimeInstance().format(endTime));
-		log.info("time taken: " + elapsed + "ms");
+		log.info("timestamp finished: " + DateFormat.getTimeInstance().format(System.currentTimeMillis()));
+		log.info("time taken: " + elapsed);
 		log.info("threaded: " + Config.getInstance().getBooleanParameter("threaded"));
 		log.info("nodeThreads: " + Config.getInstance().getBooleanParameter("nodeThreads"));
 		log.info("threadPoolSize: " + Config.getInstance().getIntParameter("threadPoolSize"));
 		log.info("permutations: " + Config.getInstance().getBooleanParameter("permutations"));
+	}
+	
+	public Node mergeGraphs(Node firstGraph, Node secondGraph){
+		List<Node> graphs = new ArrayList<>();
+		graphs.add(firstGraph);
+		graphs.add(secondGraph);
+		
+		Node resultGraph = new Node();
+		if (Config.getInstance().getBooleanParameter("permutations")) {
+			if (Config.getInstance().getBooleanParameter("threaded")) {
+				mergeAllGraphPermutationsThreaded(graphs);
+			} else {
+				resultGraph = mergeAllGraphPermutations(graphs);
+			}
+		} else {
+			if (Config.getInstance().getBooleanParameter("sorted")) {
+				resultGraph = mergeGraphsSorted(graphs);
+			} else {
+				resultGraph = mergeGraphsEfficient(graphs);
+			}
+
+		}
+		return resultGraph;
+	}
+	
+	public Node mergeGraphs(List<Node> graphs){
+		Node resultGraph = new Node();
+		if (Config.getInstance().getBooleanParameter("permutations")) {
+			if (Config.getInstance().getBooleanParameter("threaded")) {
+				mergeAllGraphPermutationsThreaded(graphs);
+			} else {
+				resultGraph = mergeAllGraphPermutations(graphs);
+			}
+		} else {
+			if (Config.getInstance().getBooleanParameter("sorted")) {
+				resultGraph = mergeGraphsSorted(graphs);
+			} else {
+				resultGraph = mergeGraphsEfficient(graphs);
+			}
+
+		}
+		return resultGraph;
 	}
 
 	// sort modes are defined in settings with sortMode (ASC, DESC, SHUFFLE)
@@ -116,8 +153,7 @@ public class GraphAnalyser {
 			List<Integer> curPermutation = permutations.get(i);
 			Node newGraph = new Node();
 			for (int j = 0; j < curPermutation.size(); j++) {
-				log.debug("merging graph " + newGraph.getType() + " and graph "
-						+ graphs.get(curPermutation.get(j)).getType());
+				log.debug("merging graph " + newGraph.getType() + " and graph " + graphs.get(curPermutation.get(j)).getType());
 				newGraph = NodeMerger.mergeNodes(newGraph, graphs.get(curPermutation.get(j)));
 			}
 			if (Config.getInstance().getBooleanParameter("writeThreadResults")) {
