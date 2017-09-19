@@ -167,3 +167,8 @@ a list for system specific settings.
   * *rHome*
 
 points to the home directory of the r installation. Currently not in use! (example: {"rHome":"/usr/bin/R"})
+
+Funding
+--------------
+
+This work was funded by Deutsche Forschungsgemeinschaft (DFG), grant no. MA 3964/5-1; the AMUR project at GESIS
