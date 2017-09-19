@@ -1,4 +1,4 @@
-User Session Tree Analysis Tool used in the DFG Project AMUR (IJDL 2017)
+User Session Tree Analysis Tool used in the DFG Project AMUR
 ==============
 
 This tool can be used to analyse user behaviour based on a tree based represenation of the user's search session in a search system. There are three modes in which the tool can be used:
@@ -146,3 +146,8 @@ a list for system specific settings.
   * *rHome*
 
 points to the home directory of the r installation. Currently not in use! (example: {"rHome":"/usr/bin/R"})
+
+Funding
+--------------
+
+This work was funded by Deutsche Forschungsgemeinschaft (DFG), grant no. MA 3964/5-1; the AMUR project at GESIS
