@@ -1,0 +1,52 @@
+{
+  "type": "p27",
+  "weight": 1,
+  "children": [
+    {
+      "type": "rec",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "ref",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "key",
+      "weight": 1
+    },
+    {
+      "type": "cite",
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

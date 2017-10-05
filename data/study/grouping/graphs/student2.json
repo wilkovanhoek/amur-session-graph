@@ -1,0 +1,224 @@
+{
+  "type": "s2",
+  "weight": 1,
+  "index": 1,
+  "children": [
+    {
+      "type": "cite",
+      "weight": 1,
+      "index": 2,
+      "children": [
+        {
+          "type": "doc",
+          "index": 3,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 4,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 5,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 6,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "fst",
+      "index": 7,
+      "weight": 1,
+      "children": [
+        {
+          "type": "fst",
+          "weight": 1,
+          "index": 8,
+          "children": [
+            {
+              "type": "doc",
+              "index": 9,
+              "weight": 1
+            },
+            {
+              "type": "doc",
+              "index": 10,
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "author",
+      "index": 11,
+      "weight": 1,
+      "children": [
+        {
+          "type": "doc",
+          "index": 12,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 13,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "type": "ref",
+      "weight": 1,
+      "index": 14,
+      "children": [
+        {
+          "type": "doc",
+          "index": 15,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 16,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 17,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 18,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 19,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 20,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 21,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 22,
+          "weight": 1
+        },
+        {
+          "type": "doc",
+          "index": 23,
+          "weight": 1,
+          "children": [
+            {
+              "type": "cite",
+              "weight": 1,
+              "index": 25,
+              "children": [
+                {
+                  "type": "doc",
+                  "index": 26,
+                  "weight": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "index": 24,
+          "weight": 1,
+          "children": [
+            {
+              "type": "cite",
+              "index": 27,
+              "weight": 1,
+              "children": [
+                {
+                  "type": "doc",
+                  "index": 28,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 29,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 30,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "index": 31,
+                  "weight": 1
+                },
+                {
+                  "type": "doc",
+                  "weight": 1,
+                  "index": 32,
+                  "children": [
+                    {
+                      "type": "ref",
+                      "index": 33,
+                      "weight": 1,
+                      "children": [
+                        {
+                          "type": "doc",
+                          "index": 34,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 35,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 36,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 37,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 38,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 39,
+                          "weight": 1
+                        },
+                        {
+                          "type": "doc",
+                          "index": 40,
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
