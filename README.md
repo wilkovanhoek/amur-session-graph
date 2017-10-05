@@ -5,40 +5,33 @@ This tool can be used to analyse user behaviour based on a tree based represenat
 
 * default (merge): Multiple user sessions can be merged into a single combined graph. 
 
+* classify: when archetpyes are defined (see [tpdl 2017](https://github.com/wilkovanhoek/amur-session-graph/tree/tpdl2017)), this calculates distances between given graphs and archetypes.
+
 * cluster: clusters all graphs into n groups with at least m members. This mode is in experimental status and was never finished.
 
 
-Create graphs used in TPDL 2017 Paper (Building User Groups based on a Structural Representation of User Search Sessions)
+IJDL and TPDL 2017
 --------------
 
-You can create the graphs used in our paper following the steps described below. You would need Java, Maven and R installed on your system. Also we recommend using IDEs (Eclipse, R-Studio).
+This tool was developed and used in the context of two publications. For each publication there is a specific branch:
 
- 1. run the java project. The main is in org.gesis.wts.amur.graph.Start. Pass 'tpdl-settings.conf' as only argument (alternatively, you can omit an argument but would have to rename the *config/tpdl-settings.conf* to *config/settings.conf*). We recommend to do this in an IDE (e.g. Eclipse). The project will process various folders and create results in: 
- 
- * *data/study/all/results*
- combined graph for all graphs and the individual graphs
- 
- * *data/study/grouping/non_archetype_graphs*
- combined graph of all graphs that were not grouped and the individual graphs
- 
- * *data/study/grouping/groups/[ecobreadth|exhbreadth|exhepth|syssupport]/results*
- combined graph per group and the individual graphs
- 
- The creation of the individual graphs is supposed to help to generate the ability to inspect each session individually.
- 
- 2. copy the combined graphs into the archetypes folder for further processing (executed from the projects root folder):
- 
- ```
-cp data/study/all/results/study_* data/study/grouping/archetypes/
-cp data/study/grouping/groups/ecobreadth/results/study_* data/study/grouping/archetypes/
-cp data/study/grouping/groups/exhbreadth/results/study_* data/study/grouping/archetypes/
-cp data/study/grouping/groups/exhdepth/results/study_* data/study/grouping/archetypes/
-cp data/study/grouping/groups/syssupport/results/study_* data/study/grouping/archetypes/
- ```
+[ijdl](https://github.com/wilkovanhoek/amur-session-graph/tree/ijdl) - Carevic, Zeljko, et al. "Investigating exploratory search activities based on the stratagem level in digital libraries." International Journal on Digital Libraries (2017): 1-21.
 
- 3. run the R script *r-stuff/displayGraphs.R* (No arguments needed). This will create pdf files for all individual graphs in the folder described in (1) (and stores them in the same folders *data/study/grouping/groups/[ecobreadth|exhbreadth|exhepth|syssupport]/results*) and the combined and thresholded graphs in *data/study/grouping/archetypes/*.
+[tpdl 2017](https://github.com/wilkovanhoek/amur-session-graph/tree/tpdl2017) - van Hoek, Wilko, and Zeljko Carevic. "Building User Groups Based on a Structural Representation of User Search Sessions." International Conference on Theory and Practice of Digital Libraries. Springer, Cham, 2017.
 
-If this process does not work for you or you have any additional questions, please don't hesitate to start an issue or contact the corresponding authors of the paper.
+
+Classifying Graphs
+--------------
+
+In addition to the published results in our TPDL paper, we experimented on assessing how good graphs not belonging to one of our groups fit into one of our archetypes. Therefore, we merge each archetpye and graph individually and assess the number of nodes of the resulting graph. In our assumption, graphs that merge well with an archetype are those, where the resulting graph conains a minimal number of nodes. This means, that most nodes could be merged and the graphs overlap very well. At the same time the number of nodes of both, the archetype and the graph in question should be close to each other. We planned to define a suitable metric for this. Anyhow, this work remains unfinished.
+
+Our analysis can be triggered using the following steps:
+
+ 1. run the java project (master branch). In the way it is describe in [tpdl 2017](https://github.com/wilkovanhoek/amur-session-graph/tree/tpdl2017).
+ 
+ 2. change the config used as run parameter to 'tpdl-settings_(classify).conf' (in this config only the mode is changed to classify) and run the project again.
+ 
+ The results of the analysis will be stored in *data/study/grouping/results/classifier.csv*. In addition, a pre-processed version is stored under *ata/study/grouping/classification.csv*. 
 
 
 Folder Structure
