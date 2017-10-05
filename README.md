@@ -31,7 +31,7 @@ Our analysis can be triggered using the following steps:
  
  2. change the config used as run parameter to 'tpdl-settings_(classify).conf' (in this config only the mode is changed to classify) and run the project again.
  
- The results of the analysis will be stored in *data/study/grouping/results/classifier.csv*. In addition, a pre-processed version is stored under *ata/study/grouping/classification.csv*. 
+ The results of the analysis will be stored in *data/study/grouping/results/classifier.csv*. In addition, a pre-processed version is stored under *data/study/grouping/classification.csv*. 
 
 
 Folder Structure
